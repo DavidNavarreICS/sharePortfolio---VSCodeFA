@@ -51,8 +51,7 @@ class ActionTest {
     void testEqualsWithSimilarObject() {
         final Action action1 = new ActionImpl(FOO_SHARE1);
         final Action action2 = new ActionImpl(FOO_SHARE1);
-
-        Assertions.assertTrue(action1.equals(action2));
+        Assertions.assertEquals(true, action1.equals(action2));
     }
 
     @Test
