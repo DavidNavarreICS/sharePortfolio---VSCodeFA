@@ -38,10 +38,10 @@ public abstract class Action {
     /**
      * Builds an Action object from a string parameter.
      *
-     * @param libelle the name of the action object
+     * @param aLibelle the name of the action object
      */
-    protected Action(final String libelle) {
-        this.libelle = libelle;
+    protected Action(final String aLibelle) {
+        this.libelle = aLibelle;
     }
 
     /**
@@ -50,7 +50,7 @@ public abstract class Action {
      * @param j
      * @return
      */
-    public abstract float valeur(Jour j);
+    public abstract float valeur(final Jour j);
 
     @Override
     public int hashCode() {
@@ -60,14 +60,14 @@ public abstract class Action {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (obj == null) {
+    public boolean equals(final Object aOther) {
+        if (aOther == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (getClass() != aOther.getClass()) {
             return false;
         }
-        final Action other = (Action) obj;
+        final Action other = (Action) aOther;
         return Objects.equals(this.libelle, other.libelle);
     }
 
